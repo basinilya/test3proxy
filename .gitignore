@@ -1,0 +1,4 @@
+*.o
+*.bin
+*.bak
+/test3proxy
