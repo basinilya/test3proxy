@@ -1,4 +1,25 @@
-#define _DEFAULT_SOURCE
+/**
+ * Run program without arguments to see usage.
+ * 
+ * The program imitates HTTP/2 traffic.
+ *
+ * In server mode
+ * - accept a single client
+ * - consume one dummy "request"
+ * - send dummy "response"
+ * - send "go away"
+ * - wait for EOF from client
+ *
+ * In client mode
+ * - connect to server
+ * - send one dummy "request"
+ * - keep sending more "requests"
+ * - consume all data from server, look for "go away"
+ * - wait for EOF from server
+ *
+ * Optionally connect via HTTP CONNECT proxy
+ *
+ */
 
 #include <sys/types.h>
 
